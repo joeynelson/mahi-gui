@@ -10,8 +10,8 @@
 #include "nanovg_gl.h"
 #include "nanovg_gl_utils.h"
 #include "imgui_internal.h"
-#include "examples/imgui_impl_glfw.h"
-#include "examples/imgui_impl_opengl3.h"
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_opengl3.h"
 #include "implot.h"
 #include <stdio.h>
 #include <iostream>

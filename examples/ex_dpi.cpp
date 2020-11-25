@@ -21,16 +21,19 @@
 using namespace mahi::gui;
 using namespace mahi::util;
 
+// THIS EXAMPLE CURRENTLY DOES NOT WORK, DPI IS A WIP!!!
+
 class DpiDemo : public Application {
 public:
     DpiDemo(Config conf) : Application(conf) {
         ImGui::DisableViewports();
     }
     virtual void update() override { 
-        ImGui::SetNextWindowPos(ImVec2(5,5), ImGuiCond_Always);
-        ImGui::SetNextWindowSize(ImVec2(630,470), ImGuiCond_Always);
-        ImGui::Begin("Window", NULL, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
-        ImGui::Text("DPI Scale: %.2f", get_dpi_scale());
+        float dpi = get_dpi_scale();
+        ImGui::SetNextWindowPos(ImVec2(0,0), ImGuiCond_Appearing);
+        ImGui::SetNextWindowSize(ImVec2(640,480), ImGuiCond_Appearing);
+        ImGui::Begin("Window", NULL, ImGuiWindowFlags_NoTitleBar);
+        ImGui::Text("DPI Scale: %.2f", dpi);
         ImGui::Button("Press Me");
         ImGui::End();
     }   
@@ -38,7 +41,7 @@ public:
 
 int main(int argc, char *argv[])
 {
-    
+    // THIS EXAMPLE CURRENTLY DOES NOT WORK, DPI IS A WIP!!!
     Options options("dpi.exe", "DPI Demo");
     options.add_options()("d,dpi","Enables DPI Awareness");
     auto result = options.parse(argc, argv);
